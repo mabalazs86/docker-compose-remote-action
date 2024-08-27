@@ -32,6 +32,9 @@ inputs:
   service:
     description: Name of service to be deployed
     required: false
+  do_token:
+    description: DIGITALOCEAN_ACCESS_TOKEN
+    required: false
 runs:
   using: docker
   image: Dockerfile
