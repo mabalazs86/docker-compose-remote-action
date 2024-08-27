@@ -1,4 +1,4 @@
-FROM docker/compose:latest
+FROM docker:latest
 
 RUN apk add openssh-client
 
