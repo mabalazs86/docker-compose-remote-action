@@ -46,6 +46,8 @@ chmod 600 "$HOME/.ssh/private_key"
 eval $(ssh-agent)
 ssh-add "$HOME/.ssh/private_key"
 
+docker login -u $INPUT_DO_TOKEN -p $INPUT_DO_TOKEN registry.digitalocean.com
+
 # create remote context in docker and switch to it
 docker context create remote --docker "host=ssh://$INPUT_SSH_USER@$INPUT_SSH_HOST:$INPUT_SSH_PORT"
 docker context use remote
