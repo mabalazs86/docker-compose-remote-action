@@ -52,11 +52,11 @@ docker context use remote
 
 # pull latest images if paramether provided
 if [ "$INPUT_PULL" == 'true' ]; then
-  docker-compose -f $INPUT_COMPOSE_FILE pull
+  docker compose -f $INPUT_COMPOSE_FILE pull
 fi
 
 # deploy stack
-docker-compose -f $INPUT_COMPOSE_FILE up -d $INPUT_BUILD $INPUT_FORCE_RECREATE $INPUT_OPTIONS $INPUT_SERVICE
+docker compose -f $INPUT_COMPOSE_FILE up -d $INPUT_BUILD $INPUT_FORCE_RECREATE $INPUT_OPTIONS $INPUT_SERVICE
 
 # cleanup context
 docker context use default 
